@@ -25,11 +25,8 @@ const HomePage = () => {
           </p>
 
           <div className="cta-buttons">
-            <a href="#book" className="btn btn-primary">
-              Reserve Now
-            </a>
             <a href="#explore" className="btn btn-secondary">
-              Explore Rooms
+              + Add Button
             </a>
           </div>
         </div>
