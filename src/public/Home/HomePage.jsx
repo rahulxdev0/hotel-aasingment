@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './Home.css';
 import Modal from "../EditButtonModal/Modal";
+import DiningPage from "../Dining/DiningPage";
 
 const HomePage = () => {
   const [buttonText, setButtonText] = useState("+ Add Button");
@@ -25,6 +26,7 @@ const HomePage = () => {
   };
 
   return (
+    <>
     <div>
       <section className="hero-section">
         <nav className="navbar">
@@ -91,6 +93,8 @@ const HomePage = () => {
         </Modal>
       </section>
     </div>
+    <DiningPage />
+  </>
   );
 };
 

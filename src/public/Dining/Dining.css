@@ -1,0 +1,359 @@
+/* ==================== DINING PAGE STYLES ==================== */
+
+.dining-page {
+    min-height: 100vh;
+    background: #f8f8f8;
+    font-family: 'Georgia', serif;
+}
+
+.dining-section {
+    padding: 80px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dining-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* ==================== IMAGE SECTION ==================== */
+
+.dining-image {
+    position: relative;
+    height: 500px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),
+                url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.best-deals-badge {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    background: linear-gradient(45deg, #d4af37, #f4d03f);
+    padding: 20px 30px;
+    border-radius: 10px;
+    color: #000;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.badge-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.badge-subtitle {
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.8;
+    display: block;
+}
+
+/* ==================== CONTENT SECTION ==================== */
+
+.dining-content {
+    padding: 20px 0;
+}
+
+.dining-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.dining-description {
+    margin-bottom: 40px;
+}
+
+.description-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* ==================== DETAILS SECTION ==================== */
+
+.dining-details {
+    margin-top: 20px;
+}
+
+.detail-section {
+    margin-bottom: 30px;
+}
+
+.detail-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.detail-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    display: block;
+}
+
+/* ==================== HOURS SECTION ==================== */
+
+.hours-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hour-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.time-icon {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.hour-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ==================== EDITABLE TEXT COMPONENTS ==================== */
+
+.editable-text-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.editable-text {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.editable-text:hover {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.edit-icon-btn {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #d4af37;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.edit-icon-btn:hover {
+    background: #f4d03f;
+    transform: scale(1.1);
+}
+
+/* ==================== EDIT MODAL ==================== */
+
+.edit-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.edit-modal {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-out;
+}
+
+.edit-modal h3 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.edit-input {
+    width: 100%;
+    min-height: 100px;
+    padding: 15px;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    resize: vertical;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.edit-input:focus {
+    border-color: #f4d03f;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.edit-modal-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.edit-modal-buttons button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.save-btn {
+    background: linear-gradient(45deg, #d4af37, #f4d03f);
+    color: #000;
+}
+
+.save-btn:hover {
+    background: linear-gradient(45deg, #f4d03f, #d4af37);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.cancel-btn {
+    background: #666;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: #888;
+    transform: translateY(-2px);
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 768px) {
+    .dining-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 15px;
+    }
+    
+    .dining-image {
+        height: 300px;
+    }
+    
+    .best-deals-badge {
+        bottom: 20px;
+        left: 20px;
+        padding: 15px 20px;
+    }
+    
+    .dining-title {
+        font-size: 2rem;
+    }
+    
+    .hours-list {
+        gap: 10px;
+    }
+    
+    .hour-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .edit-modal {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .edit-modal-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .edit-modal-buttons button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .dining-section {
+        padding: 40px 0;
+    }
+    
+    .dining-title {
+        font-size: 1.8rem;
+    }
+    
+    .description-text,
+    .detail-text,
+    .hour-text {
+        font-size: 0.9rem;
+    }
+    
+    .detail-title {
+        font-size: 1.2rem;
+    }
+}
