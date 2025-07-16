@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import './Home.css';
+import Modal from "../EditButtonModal/Modal";
 
 const HomePage = () => {
+  const [buttonText, setButtonText] = useState("+ Add Button");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [tempText, setTempText] = useState("");
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleEditClick = () => {
+    setTempText(buttonText);
+    setIsModalOpen(true);
+  };
+
+  const handleSaveText = () => {
+    if (tempText.trim()) {
+      setButtonText(tempText);
+    }
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
-    <body>
+    <div>
       <section className="hero-section">
         <nav className="navbar">
           <div className="hotel-logo">Luxe Vista</div>
@@ -25,9 +47,24 @@ const HomePage = () => {
           </p>
 
           <div className="cta-buttons">
-            <a href="#explore" className="btn btn-secondary">
-              + Add Button
-            </a>
+            <div 
+              className="btn-container"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <button className="btn btn-secondary">
+                {buttonText}
+              </button>
+              {isHovered && (
+                <button 
+                  className="edit-btn"
+                  onClick={handleEditClick}
+                  title="Edit button text"
+                >
+                  ✏️
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
@@ -35,8 +72,25 @@ const HomePage = () => {
           <span>Discover More</span>
           <span className="scroll-arrow">↓</span>
         </div>
+
+        {/* Modal */}
+        <Modal 
+          isOpen={isModalOpen}
+          onClose={handleCancel}
+          onSave={handleSaveText}
+          title="Edit Button Text"
+        >
+          <input
+            type="text"
+            value={tempText}
+            onChange={(e) => setTempText(e.target.value)}
+            placeholder="Enter button text"
+            className="modal-input"
+            autoFocus
+          />
+        </Modal>
       </section>
-    </body>
+    </div>
   );
 };
 
